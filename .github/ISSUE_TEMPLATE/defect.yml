@@ -1,0 +1,72 @@
+name: Defect report
+description: Report a UAT defect (UI/UX, external use case). Keep it black-box — no confidential data.
+title: "[Defect] "
+labels: ["defect", "uat"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This repository is PUBLIC.** Do not include PHI, real personal/student data, credentials, tokens, private hostnames, or source. Keep it to what you saw and did in the UI. Redact screenshots; link governed-storage captures rather than pasting sensitive images.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Where in the platform did you hit this?
+      options:
+        - Access & SSO
+        - Flow (LCNC)
+        - Lakehouse (catalog / documents / search / quality / ODBC-BI)
+        - Askura (surveys)
+        - LMS (learner / admin)
+        - Governance (audit / retention / permissions)
+        - Cross-cutting UX
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: scenario
+    attributes:
+      label: UAT scenario ID / title
+      description: Which scenario from the UAT plan (if any)?
+      placeholder: "e.g. LH-03 — Connect a BI client and list tables"
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / URL
+      description: The public URL and tenant you were on (no private hostnames).
+      placeholder: "e.g. rcsd.lms.vforce360.ai, tenant rcsd"
+    validations:
+      required: true
+  - type: textarea
+    id: gherkin
+    attributes:
+      label: Gherkin — the external use case
+      description: Describe the behavior as an external user, in Given/When/Then.
+      value: |
+        ```gherkin
+        Scenario: <the external use case, in the user's words>
+          Given <the starting state the user is in>
+          When <the action the user takes in the UI>
+          Then <what the user expects to see>
+        ```
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result (what happened instead)
+      description: What did you observe? Reference the "Then" above.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot / evidence
+      description: Attach a REDACTED screenshot, or link a governed-storage capture. Never paste an image containing personal/student data or PHI.
+  - type: checkboxes
+    id: confidentiality
+    attributes:
+      label: Confidentiality
+      options:
+        - label: I confirmed this report and any screenshot contain no PHI, personal/student data, credentials, private hostnames, or source code.
+          required: true
