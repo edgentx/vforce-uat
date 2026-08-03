@@ -1,0 +1,11 @@
+# Force every defect through the Defect report form, which carries the
+# confidentiality warning and the required confirmation checkbox.
+# Without this, a reviewer can open a blank issue and bypass both.
+blank_issues_enabled: false
+contact_links:
+  - name: Report a defect from inside the app (recommended)
+    url: https://github.com/edgentx/vforce-uat/issues/new?template=defect.yml
+    about: Prefer "Ask Mnemo -> Report a defect" in the platform UI; it pre-fills scenario context for you.
+  - name: Something sensitive to report?
+    url: https://github.com/edgentx/vforce-uat/blob/main/CONTRIBUTING.md
+    about: If a defect cannot be described without personal/student data, PHI, credentials, or internal detail, do NOT open a public issue. Read CONTRIBUTING for the private channel.

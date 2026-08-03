@@ -1,0 +1,67 @@
+# This repository is PUBLIC. Never commit secrets or participant data.
+# Anything matched here is ignored so it cannot be added by accident.
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+*.env
+secrets.*
+*.secret
+*.secrets
+
+# Credentials, keys, certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_rsa.*
+id_ecdsa
+id_ed25519
+*.ppk
+credentials
+credentials.*
+.netrc
+.npmrc
+.pypirc
+
+# Cloud / cluster config
+kubeconfig
+*kubeconfig*
+.kube/
+*service-account*.json
+*serviceaccount*.json
+gcp-*.json
+.aws/
+.azure/
+
+# Tokens
+.github_token
+*.token
+token.txt
+
+# Local tooling noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# UAT evidence: keep raw captures OUT of the repo.
+# Screenshots of the live platform can contain personal/student data, PHI,
+# tenant names, or session tokens. Store them in governed storage and link.
+screenshots/
+evidence/
+captures/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.webp
+*.pdf
+*.csv
+*.xlsx
