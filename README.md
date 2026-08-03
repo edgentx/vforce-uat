@@ -21,4 +21,6 @@ Everything in this repo (issues, comments, screenshots) is **world-visible and i
 
 Keep every report to the **UI/UX**: the steps you took, what you expected, and what actually happened. **Redact screenshots** before attaching. Sensitive captures should be stored in governed storage and linked (access-controlled), never pasted into a public issue. When in doubt, leave it out and describe it in words.
 
+**Read [CONTRIBUTING.md](CONTRIBUTING.md) before your first report** — it covers screenshot redaction (the most common leak during UAT) and what to do if you post something sensitive by mistake. Note that **filing an issue requires a free GitHub account**; public visibility allows anonymous *reading* only.
+
 This repo is a **black-box** view of the product. The engineering work to fix a defect happens in private product repositories; this board tracks the *reviewer-facing* defect and links out to its fix.
