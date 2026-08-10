@@ -9,8 +9,15 @@ jobs:
   # This repo is PUBLIC and its README and issue forms are read by external
   # reviewers, so American English is checked here exactly as it is in the
   # product repos (#29). No toolchain needed, so it reports in seconds.
+  #
+  # ubuntu-latest, NOT vforce360-arc, and the difference is the repo's
+  # visibility. The rest of the estate uses the ARC runner because this org is
+  # capped at $0 on GitHub-hosted minutes for PRIVATE repos. Public repos get
+  # GitHub-hosted minutes free, and the org's self-hosted runner group does not
+  # serve public repos -- pointing this job at vforce360-arc left it queued
+  # indefinitely with no runner ever picking it up.
   language:
-    runs-on: vforce360-arc
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: American English
